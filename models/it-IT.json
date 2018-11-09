@@ -1,0 +1,83 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "amicobus",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "dimentica",
+                        "cancella",
+                        "lascia stare",
+                        "esci"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "cosa devo fare",
+                        "come si configura",
+                        "come faccio a trovare la fermata",
+                        "dammi un aiuto",
+                        "aiuto"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "basta",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "BusStopIntent",
+                    "slots": [
+                        {
+                            "name": "busStop",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "impostare la fermata {busStop}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "BusStopIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.796146760070"
+                    },
+                    "slots": [
+                        {
+                            "name": "busStop",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.796146760070",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "ho salvato {busStop}"
+                    }
+                ]
+            }
+        ]
+    }
+}

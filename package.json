@@ -1,0 +1,26 @@
+{
+  "name": "amicobus",
+  "version": "1.0.0",
+  "description": "Indica l'orario del prossimo bus per la tua fermata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "bus",
+    "tper",
+    "emiliaromagna",
+    "hellobus",
+    "autobus",
+    "orari",
+    "trasporto",
+    "trasporti"
+  ],
+  "author": "EmilioDiRita",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ask-sdk": "^2.0.0"
+  }
+}
