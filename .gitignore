@@ -22,7 +22,7 @@
 
 # Folders #
 ######################
-node_modules/*
+/skill/node_modules/*
 
 # Files #
 ######################
