@@ -17,7 +17,8 @@ const LaunchRequestHandler = {
 		if (Object.keys(attributes).length === 0) 
 		{
 			return handlerInput.responseBuilder
-			.speak('Ciao! Configura una fermata chiedendo ad amicobus di impostare una fermata. Ad esempio puoi dire chiedi ad amicobus di impostare la fermata 10029. Successivamente ti basterà dire Alexa amicobus per sapere il prossimo bus. Se vorrai cambiare fermata, basterà dire chiedi ad amicobus di impostare la fermata 10029')
+			.speak('Ciao! Configura una fermata. Successivamente ti basterà dire Alexa lancia amico bus. Se non conosci il numero della tua fermata, cercalo online sulla pagina della skill. Configura subito una fermata dicendo ad esempio imposta la fermata 10029')
+      .withShouldEndSession(false)
 			.getResponse();
 		} 
 		else 
@@ -36,8 +37,7 @@ const LaunchRequestHandler = {
 		  
 		  return handlerInput.responseBuilder
 			.speak(response)
-			.getResponse();
-		
+      .getResponse();		
 		}
 	},
 };
@@ -70,10 +70,11 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'Trova online sulla pagina della skill il numero corrispondente alla tua fermata, poi chiedi ad amicobus di impostare la fermata a quel numero. Fai la stessa richiesta anche nel caso avessi già impostato la fermata per cambiare numero';
+    const speechText = 'Trova online sulla pagina della skill il numero corrispondente alla tua fermata. Configura subito una fermata dicendo ad esempio imposta la fermata 10029';
 
     return handlerInput.responseBuilder
       .speak(speechText)
+      .withShouldEndSession(false)
       .getResponse();
   },
 };
